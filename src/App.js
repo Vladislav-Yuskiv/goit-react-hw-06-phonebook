@@ -4,22 +4,10 @@ import { useSelector } from 'react-redux';
 import FormContacts from "./Components/FormContacts";
 import ContactList from "./Components/ContactList";
 import ContactItem from "./Components/ContactItem";
+import { getContacts } from './redux/contacts/contacts-selectors';
 
 function App() {
-  const items = useSelector(state => state.contacts.items);
-  // const [contacts, setContacts] = useState([]);
-
-
-  // useEffect(() => {
-  //   if (localStorage.getItem("contacts")?.length > 0) {
-  //     setContacts(JSON.parse(localStorage.getItem("contacts")));
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem("contacts", JSON.stringify(contacts));
-  // }, [contacts]);
-
+  const items = useSelector(getContacts);
 
   return (
     <>
